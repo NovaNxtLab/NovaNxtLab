@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaNxt Lab</title>
+<meta name="description" content="NovaNxt Lab offers job-oriented courses in AI, Python, Web Development, Excel, Tally and more. Learn. Build. Get Hired.">
+<meta name="keywords" content="NovaNxt Lab, AI course, Python course, Web Development, Excel training, Tally course, Mumbai IT classes">
+<meta name="author" content="NovaNxt Lab">
+
+<!-- Open Graph (for sharing) -->
+<meta property="og:title" content="NovaNxt Lab - Learn. Build. Get Hired.">
+<meta property="og:description" content="Join NovaNxt Lab for industry-ready courses in AI, Programming & IT skills.">
+<meta property="og:image" content="logo.jpeg">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background:#F5F7FA;
+}
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    
+    width:500px; /* adjust size */
+    height:500px;
+
+    background:url('header.jpeg') no-repeat center;
+    background-size:contain;
+
+    opacity:0.2; /* VERY IMPORTANT (transparency) */
+
+    z-index:-1;
+    pointer-events:none;
+}
+/* NAVBAR */
+/*nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+*/
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+
+    background:rgba(255,255,255,0.7); /* glass */
+    backdrop-filter:blur(10px); /* blur effect */
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:95px;
+}
+
+.logo span{
+    font-size:30px;
+    font-weight:600;
+    color:#0A1F44;
+}
+
+/* NAV LINKS */
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#0A1F44;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#FF7A00;
+}
+
+.nav-links a{
+    position:relative;
+    text-decoration:none;
+    color:#0A1F44;
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#FF7A00;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#FF7A00;
+}
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    /* Transparent Gradient */
+    background:linear-gradient(
+        135deg,
+        rgba(10, 31, 68, 0.85),   /* dark blue */
+        rgba(29, 161, 242, 0.85)  /* light blue */
+    );
+
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+.hero button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#FF7A00;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    background:#e56b00;
+}
+
+/* COURSES */
+.courses{
+    padding:70px 50px;
+}
+
+.courses h2{
+    margin-bottom:30px;
+    color:#0A1F44;
+}
+
+.course-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#0A1F44;
+}
+
+.card p{
+    margin:10px 0;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:10px;
+    color:#FF7A00;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0A1F44;
+    color:white;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:19px;
+    letter-spacing:1px;
+    text-transform:uppercase; /* optional stylish look */
+    transition:0.3s;
+}
+#courses{
+    scroll-margin-top: 140px;
+}
+
+/* CONTACT SECTION */
+.contact-container{
+    display:flex;
+    gap:40px;
+    padding:60px 50px;
+    flex-wrap:wrap;
+}
+
+.contact-info{
+    flex:1;
+}
+
+.contact-info h3{
+    color:#0A1F44;
+    margin-bottom:10px;
+}
+
+.contact-highlight{
+    font-size:22px;
+    font-weight:700;
+    color:#FF7A00;
+    margin-bottom:10px;
+}
+
+.contact-form{
+    flex:1;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+.contact-form button{
+    background:#FF7A00;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    width:100%;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    background:#e56b00;
+}
+.contact-container-center{
+    text-align:center;
+    padding:60px 20px;
+    max-width:600px;
+    margin:auto;
+}
+
+.contact-highlight{
+    font-size:24px;
+    font-weight:700;
+    color:#FF7A00;
+    margin:10px 0;
+}
+
+/*.contact-container-center a{
+    text-decoration:none;
+    color:#0A1F44;
+}*/
+
+.contact-container-center a:hover{
+    color:#FF7A00;
+}
+.contact-container-center{
+    text-align:center;
+    padding:60px 30px;
+    max-width:650px;
+    margin:40px auto;
+
+    background:rgba(255, 255, 255, 0.9); /* 👈 soft white background */
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    nav{
+        flex-direction:row;
+    }
+}
+
+opacity:0.05;
+
+.logo img{
+    height:95px;
+    transition:0.3s;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
+}
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#e56b00;
+    transform:translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        <img src="logo.jpeg" alt="NovaNxt Lab Logo">
+        <span>Nova<span style="color:orange;">Nxt</span> Lab</span>
+       
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div data-aos="fade-up">
+        <h1>Learn. Build. Get Hired.</h1>
+        <p>Your Skills. Your Future. Starts Here.</p>
+      <a href="#courses">
+    <button>Explore Courses</button>
+</a>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses">
+    <h2 data-aos="fade-right">Our Courses</h2>
+
+   <div class="course-container" id="courses">
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Kid Course</h3>
+        <p>Fun-based learning with basics of computers, typing, drawing tools, and beginner coding concepts designed specially for school students.</p>
+        <a href="course-child.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Office Automation + AI</h3>
+        <p>Complete MS Office training with real-world tasks, internet skills, and AI tools to become job-ready for office roles.</p>
+        <a href="course-complete-computer.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Advanced Excel + AI</h3>
+        <p>Master data analysis, formulas, dashboards, MIS reporting, and AI tools used in real corporate environments.</p>
+        <a href="course-adv-excel.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Tally + AI</h3>
+        <p>Learn accounting, GST, billing, and business management with practical Tally skills and AI support for faster work.</p>
+        <a href="course-tally.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Core Java + AI</h3>
+        <p>Build strong programming logic with OOP concepts, real-world applications, and AI tools for coding assistance.</p>
+        <a href="course-core-java.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Python + AI</h3>
+        <p>Learn Python programming, automation, APIs, and real-world problem solving with AI-powered coding techniques.</p>
+        <a href="course-python.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>Web Development + AI</h3>
+        <p>Create modern websites using HTML, CSS, JavaScript, and backend with real projects and AI tools.</p>
+        <a href="course-web-development.html">View Details →</a>
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+        <h3>AI & ML</h3>
+        <p>Introduction to Artificial Intelligence and Machine Learning with basic models, data handling, and real-world use cases.</p>
+        <a href="course-ai-ml.html">View Details →</a>
+    </div>
+
+</div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20your%20course.%20Please%20share%20details." class="whatsapp">💬</a>
+<!-- CONTACT SECTION -->
+
+
+<section class="section" id="contact">
+
+    <h2 style="text-align:center; color:#0A1F44;">Contact Us</h2>
+
+    <div class="contact-container-center">
+
+        <h3>📞 Call Now & Book Your Seat</h3>
+
+        <!-- CLICK TO CALL -->
+        <p class="contact-highlight">
+            <a href="tel:+917208237876">+91 7208237876</a>
+        </p>
+
+        <!-- CLICK TO EMAIL -->
+        <p>
+            <strong>📩 Email:</strong><br>
+            <a href="mailto:info@novanxtlab.com">info@novanxtlab.com</a>
+        </p>
+
+        <!-- ADDRESS -->
+        <p style="margin-top:20px;">
+            <strong>📍 Address:</strong><br>
+            F/29, Profit Center, Mahavir Nagar<br>
+            Kandivali (West), Mumbai
+        </p>
+
+        <!-- WHATSAPP BUTTON -->
+        <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20know%20more%20about%20your%20courses." 
+           class="btn" target="_blank">
+           💬 Chat on WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+        <!-- </div>
+
+    
+        <div class="contact-form" data-aos="fade-left">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Your Phone" required>
+                <textarea placeholder="Your Message"></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+ -->
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    © 2026 NovaNxt Lab | Learn. Build. Get Hired.
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

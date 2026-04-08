@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI ML + Generative AI Course | NovaNxt Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#F5F7FA;
+}
+
+/* WATERMARK */
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:700px;
+    height:700px;
+    background:url('header.jpeg') no-repeat center;
+    background-size:contain;
+    opacity:0.05;
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+
+    background:rgba(255,255,255,0.7); /* glass */
+    backdrop-filter:blur(10px); /* blur effect */
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:95px;
+}
+
+.logo span{
+    font-size:30px;
+    font-weight:600;
+    color:#0A1F44;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    position:relative;
+    text-decoration:none;
+    color:#0A1F44;
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#FF7A00;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#FF7A00;
+}
+
+.logo img{
+    height:95px;
+    transition:0.3s;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
+}
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#e56b00;
+    transform:translateY(-2px);
+}
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background:linear-gradient(
+        135deg,
+        rgba(10,31,68,0.75),
+        rgba(29,161,242,0.75)
+    );
+    color:white;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* SECTION */
+.section{
+    padding:60px 50px;
+}
+
+.section h2{
+    color:#0A1F44;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#FF7A00;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0A1F44;
+    color:white;
+    margin-top:40px;
+}
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    nav{
+        flex-direction:row;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<nav>
+    <div class="logo">
+        <img src="logo.jpeg">
+        <span>Nova<span style="color:orange;">Nxt</span> Lab</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+</div>
+
+   <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#courses">Courses</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>AI + ML + Generative AI</h1>
+    <p>Build Real AI Systems | Automation | Robotics (12 Weeks Program)</p>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section">
+    <h2>Course Overview</h2>
+    <div class="card">
+        <p>
+        Master cutting-edge AI technologies from fundamentals to advanced applications. 
+        Learn Machine Learning, Deep Learning, Generative AI, and Robotics through 
+        real-world projects and hands-on training.
+        </p>
+    </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="section">
+    <h2>Program Highlights</h2>
+    <div class="grid">
+
+        <div class="card">
+            <h3>⚡ 90% Practical</h3>
+            <p>Hands-on learning with real-world applications</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Real Projects</h3>
+            <p>Build portfolio-ready AI systems</p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Industry Tools</h3>
+            <p>Python, TensorFlow, OpenCV, APIs & more</p>
+        </div>
+
+        <div class="card">
+            <h3>💼 Career Ready</h3>
+            <p>Skills for AI Developer & Automation roles</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- WHAT YOU WILL LEARN -->
+<section class="section">
+    <h2>What You Will Learn</h2>
+    <div class="card">
+        <ul>
+            <li>AI & Machine Learning fundamentals</li>
+            <li>Generative AI & prompt engineering</li>
+            <li>Python programming & data handling</li>
+            <li>Model building, training & optimization</li>
+            <li>Computer Vision & real-time systems</li>
+            <li>AI automation workflows (n8n)</li>
+            <li>Robotics + AI integration</li>
+            <li>Deployment & real-world AI applications</li>
+        </ul>
+    </div>
+</section>
+
+<!-- MODULES -->
+<section class="section">
+    <h2>Course Modules</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🤖 AI Foundations + GenAI</h3>
+            <p>Prompt engineering, AI tools & content automation</p>
+        </div>
+
+        <div class="card">
+            <h3>🐍 Python + Data Handling</h3>
+            <p>Python basics, Pandas & GitHub portfolio</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Machine Learning</h3>
+            <p>Model building, training & optimization</p>
+        </div>
+
+        <div class="card">
+            <h3>👁 Computer Vision</h3>
+            <p>Face detection & object recognition systems</p>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ Agentic AI + Automation</h3>
+            <p>Workflows, APIs & automation systems</p>
+        </div>
+
+        <div class="card">
+            <h3>🧩 AI System Design</h3>
+            <p>End-to-end AI pipelines & workflows</p>
+        </div>
+
+        <div class="card">
+            <h3>🤖 Robotics + AI</h3>
+            <p>Sensors, Arduino & intelligent systems</p>
+        </div>
+
+        <div class="card">
+            <h3>🚀 Deployment + MLOps</h3>
+            <p>Deploy AI models & build real applications</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section">
+    <h2>Capstone Projects</h2>
+    <div class="card">
+        <ul>
+            <li>AI Personal Assistant (Chatbot + automation)</li>
+            <li>AI Business Automation System</li>
+            <li>AI + Robotics Intelligent System</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align:center;">
+    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20AI%20ML%20Generative%20AI%20course." 
+       class="btn" target="_blank">
+        Enroll Now
+    </a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917208237876" class="whatsapp">💬</a>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 NovaNxt Lab | Learn. Build. Get Hired.
+</footer>
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>

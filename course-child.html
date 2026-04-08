@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Computer Course | NovaNxt Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#F5F7FA;
+}
+
+/* WATERMARK */
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:700px;
+    height:700px;
+    background:url('header.jpeg') no-repeat center;
+    background-size:contain;
+    opacity:0.05;
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+
+    background:rgba(255,255,255,0.7); /* glass */
+    backdrop-filter:blur(10px); /* blur effect */
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:95px;
+}
+
+.logo span{
+    font-size:30px;
+    font-weight:600;
+    color:#0A1F44;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    position:relative;
+    text-decoration:none;
+    color:#0A1F44;
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#FF7A00;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#FF7A00;
+}
+.logo img{
+    height:95px;
+    transition:0.3s;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
+}
+nav button{
+    background:#FF7A00;
+    padding:10px 20px;
+    border:none;
+    color:white;
+    border-radius:8px;
+}
+
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#e56b00;
+    transform:translateY(-2px);
+}
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background:linear-gradient(
+        135deg,
+        rgba(10,31,68,0.75),
+        rgba(29,161,242,0.75)
+    );
+    color:white;
+}
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* SECTION */
+.section{
+    padding:60px 50px;
+}
+
+.section h2{
+    color:#0A1F44;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#FF7A00;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0A1F44;
+    color:white;
+    margin-top:40px;
+}
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    nav{
+        flex-direction:row;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<nav>
+    <div class="logo">
+        <img src="logo.jpeg">
+        <span>Nova<span style="color:orange;">Nxt</span> Lab</span>
+    </div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#courses">Courses</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Kids Computer Course</h1>
+    <p>Fun Learning | Creativity | Digital Skills (Age 5–10)</p>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section">
+    <h2>Course Overview</h2>
+    <div class="card">
+        <p>
+        This course is specially designed for kids to learn computers in a fun, interactive, 
+        and practical way. It builds digital skills, creativity, and confidence while learning.
+        </p>
+    </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="section">
+    <h2>What Kids Will Learn</h2>
+    <div class="card">
+        <ul>
+            <li>Use computer confidently (mouse & keyboard)</li>
+            <li>Create simple documents & projects</li>
+            <li>Make basic presentations</li>
+            <li>Use Excel for simple data</li>
+            <li>Design posters using Canva</li>
+            <li>Improve typing skills</li>
+            <li>Use computer for school work</li>
+        </ul>
+    </div>
+</section>
+
+<!-- DEVELOPMENT SKILLS -->
+<section class="section">
+    <h2>Development Skills</h2>
+    <div class="card">
+        <ul>
+            <li>Creativity & imagination</li>
+            <li>Logical thinking</li>
+            <li>Digital confidence</li>
+            <li>Basic problem solving</li>
+        </ul>
+    </div>
+</section>
+
+<!-- MODULES -->
+<section class="section">
+    <h2>Course Modules</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>🖥 Computer Basics</h3>
+            <p>Parts of computer, mouse, keyboard & desktop basics</p>
+        </div>
+
+        <div class="card">
+            <h3>⌨ Typing Skills</h3>
+            <p>Finger placement, speed & typing practice</p>
+        </div>
+
+        <div class="card">
+            <h3>📝 WordPad</h3>
+            <p>Basic writing, formatting & simple documents</p>
+        </div>
+
+        <div class="card">
+            <h3>📄 MS Word</h3>
+            <p>Create documents, formatting & school projects</p>
+        </div>
+
+        <div class="card">
+            <h3>📽 PowerPoint</h3>
+            <p>Create slides, animations & presentations</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Excel Basics</h3>
+            <p>Tables, simple calculations & data entry</p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Creative Design</h3>
+            <p>Canva, posters, greeting cards & creativity</p>
+        </div>
+
+        <div class="card">
+            <h3>🌐 Internet Basics</h3>
+            <p>Safe browsing & basic searching</p>
+        </div>
+
+        <div class="card">
+            <h3>🔐 Digital Safety</h3>
+            <p>Online safety & responsible usage</p>
+        </div>
+
+        <div class="card">
+            <h3>🤖 AI Tools</h3>
+            <p>ChatGPT, Canva AI & smart learning</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="text-align:center;">
+    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20Kids%20Computer%20Course." 
+       class="btn" target="_blank">
+        Enroll Now
+    </a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917208237876" class="whatsapp">💬</a>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 NovaNxt Lab | Learn. Build. Get Hired.
+</footer>
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>
