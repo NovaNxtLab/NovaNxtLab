@@ -449,6 +449,43 @@ nav button:hover{
     font-weight:500;
     letter-spacing:0.5px;
 }
+    .social-links{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social-btn{
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:500;
+    color:white;
+    transition:0.3s;
+    display:inline-block;
+}
+
+/* Individual colors */
+.social-btn:nth-child(1){
+    background:#25D366; /* WhatsApp */
+}
+
+.social-btn:nth-child(2){
+    background:#E1306C; /* Instagram */
+}
+
+.social-btn:nth-child(3){
+    background:#1877F2; /* Facebook */
+}
+
+/* Hover */
+.social-btn:hover{
+    transform:translateY(-3px);
+    opacity:0.9;
+}
 </style>
 </head>
 
@@ -573,16 +610,29 @@ nav button:hover{
         <!-- ADDRESS -->
         <p style="margin-top:20px;">
             <strong>📍 Address:</strong><br>
-            F/29, Profit Center, Mahavir Nagar<br>
-            Kandivali (West), Mumbai
+       <p style="margin-top:20px;">
+            <strong>📍 Address:</strong><br>
+             F/29, 1st Floor, Gate 2, Profit Center,<br>
+              Mahavir Nagar, Kandivali (West), Mumbai 400067
         </p>
 
         <!-- WHATSAPP BUTTON -->
-        <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20know%20more%20about%20your%20courses." 
-           class="btn" target="_blank">
-           💬 Chat on WhatsApp
-        </a>
+       <div class="social-links">
 
+    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20know%20more%20about%20your%20courses." 
+       class="social-btn" target="_blank">
+        💬 WhatsApp
+    </a>
+
+    <a href="https://www.instagram.com/novanxtlab?igsh=MTBkdDhlcDVocWJlNA==" 
+       class="social-btn" target="_blank">
+        📸 Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/17Q8CBPmVX/" 
+       class="social-btn" target="_blank">
+        📘 Facebook
+    </a>
     </div>
 
 </section>
