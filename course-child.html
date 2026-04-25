@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kids Computer Course | NovaNxt Lab</title>
+<title>Tech Explorers Kids Course | NovaNxt Lab</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -19,22 +19,26 @@ body{
     background:#F5F7FA;
 }
 
-/* WATERMARK */
+/* 🔥 SAME WATERMARK */
 body::before{
     content:"";
     position:fixed;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
+    
     width:700px;
     height:700px;
+
     background:url('header.png') no-repeat center;
     background-size:contain;
+
     opacity:0.05;
+
     z-index:-1;
 }
 
-/* NAVBAR */
+/* 🔥 SAME NAVBAR */
 nav{
     position:sticky;
     top:0;
@@ -52,6 +56,7 @@ nav{
     box-shadow:0 4px 20px rgba(0,0,0,0.08);
     border-bottom:1px solid rgba(255,255,255,0.3);
 }
+
 .logo{
     display:flex;
     align-items:center;
@@ -71,6 +76,7 @@ nav{
 .nav-links{
     display:flex;
     gap:25px;
+    align-items:center;
 }
 
 .nav-links a{
@@ -101,22 +107,17 @@ nav{
 .nav-links a:hover{
     color:#FF7A00;
 }
-.logo img{
-    height:95px;
-    transition:0.3s;
-}
 
-.logo img:hover{
-    transform:scale(1.05);
-}
+
+
 nav button{
     background:#FF7A00;
-    padding:10px 20px;
     border:none;
+    padding:10px 20px;
     color:white;
     border-radius:8px;
+    cursor:pointer;
 }
-
 nav button{
     background:#FF7A00;
     border:none;
@@ -135,21 +136,18 @@ nav button:hover{
 .hero{
     text-align:center;
     padding:100px 20px;
-    background:linear-gradient(
-        135deg,
-        rgba(10,31,68,0.75),
-        rgba(29,161,242,0.75)
-    );
+     background:linear-gradient(135deg,#0A1F44,#1DA1F2);
+  
     color:white;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:45px;
 }
 
 .hero p{
-    margin-top:10px;
     font-size:18px;
+    margin-top:10px;
 }
 
 /* SECTION */
@@ -169,6 +167,11 @@ nav button:hover{
     border-radius:15px;
     margin-bottom:20px;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
 }
 
 /* GRID */
@@ -198,6 +201,7 @@ nav button:hover{
     padding:15px;
     border-radius:50%;
     color:white;
+    text-decoration:none;
 }
 
 /* FOOTER */
@@ -207,6 +211,24 @@ footer{
     background:#0A1F44;
     color:white;
     margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        gap:10px;
+    }
 }
 /* HAMBURGER */
 .menu-toggle{
@@ -248,26 +270,25 @@ footer{
 
 <body>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 <nav>
     <div class="logo">
         <img src="logo.png">
         <span>Nova<span style="color:orange;">Nxt</span> Lab</span>
     </div>
 
-    <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
+    <div class="nav-links">
+         <a href="index.html">Home</a>
+         <a href="index.html#aboutus">About Us</a>
         <a href="index.html#courses">Courses</a>
         <a href="index.html#contact">Contact</a>
     </div>
-
-    
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Kids Computer Course</h1>
-    <p>Fun Learning | Creativity | Digital Skills (Age 5–10)</p>
+    <h1>Tech Explorers: From Gamer to Creator 🚀</h1>
+    <p>A Creative Coding + AI Adventure Program (Age 5–10)</p>
 </section>
 
 <!-- OVERVIEW -->
@@ -275,103 +296,107 @@ footer{
     <h2>Course Overview</h2>
     <div class="card">
         <p>
-        This course is specially designed for kids to learn computers in a fun, interactive, 
-        and practical way. It builds digital skills, creativity, and confidence while learning.
+        Kids don’t just study here — they <b>build, play, create & showcase</b>.  
+        This program transforms kids from <b>game players into real creators</b> using coding, AI, design & fun projects.
         </p>
     </div>
 </section>
 
-<!-- OUTCOMES -->
+<!-- HIGHLIGHTS -->
 <section class="section">
-    <h2>What Kids Will Learn</h2>
+    <h2>Why This Course is Different</h2>
     <div class="card">
         <ul>
-            <li>Use computer confidently (mouse & keyboard)</li>
-            <li>Create simple documents & projects</li>
-            <li>Make basic presentations</li>
-            <li>Use Excel for simple data</li>
-            <li>Design posters using Canva</li>
-            <li>Improve typing skills</li>
-            <li>Use computer for school work</li>
+            <li>Not boring theory ❌</li>
+            <li>Full fun + creativity + tech ✅</li>
+            <li>Real-world projects (games, apps, AI, videos)</li>
+            <li>Confidence building through presentations</li>
+            <li>Kids showcase their work like creators</li>
         </ul>
     </div>
 </section>
 
-<!-- DEVELOPMENT SKILLS -->
-<section class="section">
-    <h2>Development Skills</h2>
-    <div class="card">
-        <ul>
-            <li>Creativity & imagination</li>
-            <li>Logical thinking</li>
-            <li>Digital confidence</li>
-            <li>Basic problem solving</li>
-        </ul>
-    </div>
-</section>
-
-<!-- MODULES -->
+<!-- LEVELS -->
 <section class="section">
     <h2>Course Modules</h2>
 
     <div class="grid">
 
         <div class="card">
-            <h3>🖥 Computer Basics</h3>
-            <p>Parts of computer, mouse, keyboard & desktop basics</p>
+            <h3>🌍 Level 1: Digital Hero Training</h3>
+            <p><!-- <b>Learn:</b>  -->Computer tricks, typing, smart internet</p>
+       <!--      <p><b>Activities:</b> Typing race, hidden file challenge</p>
+            <p><b>Project:</b> About Me Digital Card</p> -->
         </div>
 
         <div class="card">
-            <h3>⌨ Typing Skills</h3>
-            <p>Finger placement, speed & typing practice</p>
+            <h3>🎨 Level 2: Creative Design Universe</h3>
+            <p><!-- <b>Learn:</b>  -->Canva, colors, layouts, AI tools</p>
+          <!--   <p><b>Activities:</b> Design challenge, meme competition</p>
+            <p><b>Projects:</b> Cards, posters, Instagram posts</p> -->
         </div>
 
         <div class="card">
-            <h3>📝 WordPad</h3>
-            <p>Basic writing, formatting & simple documents</p>
+            <h3>🎮 Level 3: Game Creator Lab</h3>
+            <p><!-- <b>Learn:</b> --> Scratch coding, logic, animation</p>
+           <!--  <p><b>Activities:</b> Fix game, sound effects</p>
+            <p><b>Projects:</b> Quiz game, maze, cartoon</p> -->
         </div>
 
         <div class="card">
-            <h3>📄 MS Word</h3>
-            <p>Create documents, formatting & school projects</p>
+            <h3>📱 Level 4: App Creator Zone</h3>
+            <p><!-- <b>Learn:</b>  -->Mobile apps, UI design</p>
+       <!--      <p><b>Activities:</b> App idea pitch</p>
+            <p><b>Projects:</b> Calculator, quiz, reminder app</p> -->
         </div>
 
         <div class="card">
-            <h3>📽 PowerPoint</h3>
-            <p>Create slides, animations & presentations</p>
+            <h3>🤖 Level 5: AI Superpowers</h3>
+            <p><!-- <b>Learn:</b>  -->ChatGPT, prompts, AI creativity</p>
+        <!--     <p><b>Activities:</b> Ask AI anything</p>
+            <p><b>Projects:</b> Story, poster, comic</p> -->
         </div>
 
         <div class="card">
-            <h3>📊 Excel Basics</h3>
-            <p>Tables, simple calculations & data entry</p>
-        </div>
+            <h3>🎬 Level 6: Digital Creator Studio</h3>
+            <p><!-- <b>Learn:</b> --> Reel making, video editing</p>
+            <!-- <p><b>Activities:</b> Viral reel challenge</p>
+            <p><b>Projects:</b> Reel, YouTube video</p>
+        </div> -->
 
-        <div class="card">
-            <h3>🎨 Creative Design</h3>
-            <p>Canva, posters, greeting cards & creativity</p>
-        </div>
+    </div>
+</section>
 
-        <div class="card">
-            <h3>🌐 Internet Basics</h3>
-            <p>Safe browsing & basic searching</p>
-        </div>
+<!-- CAPSTONE -->
+<!-- <section class="section">
+    <h2>🏆 Final Capstone: Create Your Own Brand</h2>
+    <div class="card">
+        <ul>
+            <li>Game + Poster + Video</li>
+            <li>App + Promo + Demo</li>
+            <li>AI Project + Story + Design</li>
+        </ul>
+    </div>
+</section> -->
 
-        <div class="card">
-            <h3>🔐 Digital Safety</h3>
-            <p>Online safety & responsible usage</p>
-        </div>
-
-        <div class="card">
-            <h3>🤖 AI Tools</h3>
-            <p>ChatGPT, Canva AI & smart learning</p>
-        </div>
-
+<!-- OUTPUT -->
+<section class="section">
+    <h2>🎁 What Kids Will Achieve</h2>
+    <div class="card">
+        <ul>
+            <li>Their own GAME 🎮</li>
+            <li>Their own MOBILE APP 📱</li>
+            <li>Their own DESIGNS 🎨</li>
+            <li>Their own AI PROJECT 🤖</li>
+            <li>Their own VIDEO 🎬</li>
+        </ul>
+        <p><b>Result:</b> Mini Tech Creator 😎</p>
     </div>
 </section>
 
 <!-- CTA -->
 <section class="section" style="text-align:center;">
-    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20Kids%20Computer%20Course." 
+    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20Kids%20Course." 
        class="btn" target="_blank">
         Enroll Now
     </a>
@@ -384,10 +409,6 @@ footer{
 <footer>
     © 2026 NovaNxt Lab | Learn. Build. Get Hired.
 </footer>
-<script>
-function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("active");
-}
-</script>
+
 </body>
 </html>
