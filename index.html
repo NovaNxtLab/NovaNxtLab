@@ -191,11 +191,7 @@ nav button{
     text-align:center;
 
     /* Transparent Gradient */
-    background:linear-gradient(
-        135deg,
-        rgba(10, 31, 68, 0.85),   /* dark blue */
-        rgba(29, 161, 242, 0.85)  /* light blue */
-    );
+       background:linear-gradient(135deg,#0A1F44,#1DA1F2);
 
     color:white;
     padding:20px;
@@ -516,6 +512,58 @@ nav button:hover{
     transform:translateY(-3px);
     opacity:0.9;
 }
+.card img{
+    transition:0.3s;
+}
+
+.card img:hover{
+    transform:scale(1.05);
+}
+/* 📸 PHOTO GRID FIX */
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+    max-width:700px;
+    margin:30px auto;
+}
+
+.photo-grid img{
+    width:100%;
+    height:200px; /* fixed height */
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.4s ease;
+}
+@media(max-width:768px){
+    .photo-grid{
+        grid-template-columns:1fr; /* mobile pe 1-1 */
+    }
+
+    .photo-grid img{
+        height:180px;
+    }
+}
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+
+    transition:all 0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+.section{
+    padding:60px 50px;
+    transition:all 0.5s ease;
+}
+#aboutus{
+    scroll-margin-top: 110px;
+}
 </style>
 </head>
 
@@ -537,6 +585,7 @@ nav button:hover{
 
     <div class="nav-links" id="navLinks">
         <a href="#">Home</a>
+        <a href="#aboutus">About Us</a>
         <a href="#courses">Courses</a>
         <a href="#contact">Contact</a>
     </div>
@@ -546,6 +595,9 @@ nav button:hover{
 </nav>
 
 <!-- HERO -->
+
+
+
 <section class="hero">
     <div data-aos="fade-up">
        <h1>Learn. Build. Get Hired.</h1>
@@ -554,6 +606,62 @@ nav button:hover{
     <button>Explore Courses</button>
 </a>
     </div>
+</section>
+
+<section class="section" class="aboutus" id="aboutus">
+
+    <h2 style="text-align:center; color:#0A1F44;" data-aos="fade-up">About NovaNxt Lab</h2><br>
+
+    <div class="card" data-aos="fade-up">
+      <p>
+At <strong>NovaNxt Lab</strong>, we are a leading job-oriented computer training institute in Kandivali (West), Mumbai, offering practical, skill-based learning for students and professionals. Our courses include computer training, IT programs, accounting, and creative design, designed to build real-world skills and make you job-ready. 
+<p style="margin-top:15px;">
+With expert trainers, hands-on projects, and an industry-relevant curriculum, we focus on career-focused learning that helps you grow, gain confidence, and achieve success in today’s competitive digital world.
+</p> </p>
+
+    </div>
+<br><br>
+    <!-- VISION & MISSION -->
+    <div class="grid">
+
+        <div class="card" data-aos="fade-right">
+            <h3>🎯 Our Vision</h3>
+           <p>
+Our vision at <strong>NovaNxt Lab</strong> is to become a leading job-oriented computer training institute that empowers students with practical skills and digital expertise to become future-ready professionals. 
+<p style="margin-top:15px;">
+We aim to create a learning platform that goes beyond theory and focuses on real-world training, helping individuals build successful careers in technology, business, and creative fields. Through innovation and industry-relevant education, we strive to drive career growth and transform learners into confident professionals in the digital era.
+</p></p><p style="color:#FF7A00; font-weight:600;">  <a href="https://maps.google.com/?q=F/29,Profit+Center,Mahavir+Nagar,Kandivali+West,Mumbai" 
+       target="_blank">
+Best job-oriented computer classes in Kandivali, Mumbai.</a>
+</p>
+        </div>
+<br><br>
+   <!--      <div class="card" data-aos="fade-left">
+            <h3>🚀 Our Mission</h3>
+           <p>
+At <strong>NovaNxt Lab</strong>, we aim to empower individuals with practical, skill-driven learning to become future-ready professionals. As a job-oriented computer training institute in Mumbai, we focus on real-world skills, IT training, and career-focused programs that prepare students for success in the digital era. 
+<p style="margin-top:15px;">
+Our mission is to provide industry-relevant training in technology, business, and creative fields, helping students build strong careers through hands-on learning, innovation, and continuous growth.
+</p> <br></p>
+        </div>
+<br><br>
+    </div> -->
+
+    <!-- 📸 CLASSROOM PHOTOS -->
+
+  <h2 style="text-align:center; margin-top:50px; color:#0A1F44;" data-aos="fade-up">
+    Our Classroom
+</h2>
+
+<div class="photo-grid">
+
+    <img src="img1.jpg" alt="Classroom 1" data-aos="zoom-in">
+    <img src="img2.jpg" alt="Classroom 2" data-aos="zoom-in">
+    <img src="img3.jpg" alt="Classroom 3" data-aos="zoom-in">
+    <img src="img4.jpg" alt="Classroom 4" data-aos="zoom-in">
+
+</div>
+
 </section>
 
 <!-- COURSES -->
@@ -610,6 +718,11 @@ nav button:hover{
         <a href="course-ai-ml.html" title="AI & Ml Course in Mumbai">View Details →</a>
     </div>
 
+    <div class="card" data-aos="zoom-in">
+    <h3>Digital Marketing + AI</h3>
+    <p>Learn social media marketing, SEO, content creation, paid ads, and freelancing skills to grow brands and earn online.</p>
+    <a href="course-digital-marketing.html" title="Digital Marketing Course in Mumbai">View Details →</a>
+</div>
 </div>
 </section>
 
