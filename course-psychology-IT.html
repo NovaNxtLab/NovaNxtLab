@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psychology & IT Course | NovaNxt Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#F5F7FA;
+}
+
+/* 🔥 SAME WATERMARK */
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    
+    width:700px;
+    height:700px;
+
+    background:url('header.png') no-repeat center;
+    background-size:contain;
+
+    opacity:0.05;
+
+    z-index:-1;
+}
+
+/* 🔥 SAME NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+
+    background:rgba(255,255,255,0.7); /* glass */
+    backdrop-filter:blur(10px); /* blur effect */
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:95px;
+}
+
+.logo span{
+    font-size:30px;
+    font-weight:600;
+    color:#0A1F44;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    position:relative;
+    text-decoration:none;
+    color:#0A1F44;
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#FF7A00;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#FF7A00;
+}
+
+
+
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#e56b00;
+    transform:translateY(-2px);
+}
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+     background:linear-gradient(135deg,#0A1F44,#1DA1F2);
+  
+    color:white;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-top:10px;
+}
+
+/* SECTION */
+.section{
+    padding:60px 50px;
+}
+
+.section h2{
+    color:#0A1F44;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#FF7A00;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0A1F44;
+    color:white;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .nav-links{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    nav{
+        flex-direction:row;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        <img src="logo.png" alt="NovaNxt Lab Logo">
+        <span>Nova<span style="color:#F59E0B;">Nxt</span> Lab</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#aboutus">About</a>
+        <a href="index.html#courses">Courses</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content" data-aos="fade-up">
+        <h1>Psychology + IT <br> Real Life Skills Program</h1>
+
+     <!--    <p>
+            A modern practical course that combines Psychology, Emotional Intelligence,
+            Communication Skills, Human Behaviour & AI tools to help students understand
+            themselves, build stronger relationships and develop real-world skills.
+        </p> -->
+
+      <!--   <div class="hero-btns">
+            <a href="#modules" class="btn btn-primary">Explore Modules</a>
+
+            <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20details%20about%20the%20Psychology%20%2B%20IT%20Course." class="btn btn-outline">Enroll Now</a>
+        </div> -->
+    </div>
+
+</section>
+
+<!-- COURSE OVERVIEW -->
+<section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Course Overview</h2>
+      <!--   <p>Psychology learning designed for today's generation</p> -->
+    </div>
+
+    <div class="highlight card" data-aos="zoom-in">
+        <p style="font-size:18px; line-height:2; color:#444;">
+            This is not a traditional theory-based psychology class.
+            Students learn through practical activities, role-plays, discussions,
+            real-life simulations, reflection exercises, communication tasks,
+            emotional intelligence training and AI-supported learning.
+            
+            The course helps students understand thoughts, emotions, relationships,
+            behaviour patterns, stress handling and modern digital psychology tools.
+        </p>
+    </div>
+
+</section>
+
+<!-- STUDENTS GAIN -->
+<!-- <section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>What Students Will Gain</h2>
+        <p>Real skills beyond textbooks</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-aos="fade-up">
+            <h3>🧠 Self Awareness</h3>
+            <p>Understand thoughts, emotions, habits, mindset patterns and behaviour.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <h3>💬 Communication</h3>
+            <p>Improve conversations, confidence, listening skills and social interactions.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <h3>❤️ Emotional Intelligence</h3>
+            <p>Learn emotional control, stress management and healthy reactions.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+            <h3>🤝 Relationship Skills</h3>
+            <p>Build stronger friendships, teamwork abilities and healthy boundaries.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="400">
+            <h3>🤖 AI + Psychology</h3>
+            <p>Use tools like ChatGPT, Canva, Grammarly and Notion responsibly.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+            <h3>🌍 Real Life Skills</h3>
+            <p>Develop decision-making, problem-solving and practical thinking abilities.</p>
+        </div>
+
+    </div>
+
+</section> -->
+
+<!-- MODULES -->
+<section class="section" id="modules">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Course Modules</h2>
+      <!--   <p>16-week experiential psychology & IT program</p> -->
+    </div>
+
+    <div class="grid">
+
+        <div class="card module-card" data-aos="zoom-in">
+            <span>🧠</span>
+            <h3>Module 1: Self & Thinking</h3>
+            <ul>
+                <li>Self awareness</li>
+                <li>Mindset & identity</li>
+                <li>Thought patterns</li>
+                <li>Overthinking management</li>
+                <li>Habit understanding</li>
+            </ul>
+        </div>
+
+        <div class="card module-card" data-aos="zoom-in" data-aos-delay="100">
+            <span>💭</span>
+            <h3>Module 2: Emotions & Behaviour</h3>
+            <ul>
+                <li>Emotional intelligence</li>
+                <li>Stress management</li>
+                <li>Behaviour understanding</li>
+                <li>Confidence building</li>
+                <li>Reaction control</li>
+            </ul>
+        </div>
+
+        <div class="card module-card" data-aos="zoom-in" data-aos-delay="200">
+            <span>🤝</span>
+            <h3>Module 3: Relationships & Social Skills</h3>
+            <ul>
+                <li>Communication skills</li>
+                <li>Healthy relationships</li>
+                <li>Conflict management</li>
+                <li>Teamwork & empathy</li>
+                <li>Social psychology basics</li>
+            </ul>
+        </div>
+
+        <div class="card module-card" data-aos="zoom-in" data-aos-delay="300">
+            <span>🌱</span>
+            <h3>Module 4: Mental Well-Being</h3>
+            <ul>
+                <li>Mental wellness awareness</li>
+                <li>Healthy coping techniques</li>
+                <li>Reflection practices</li>
+                <li>Helping skills</li>
+                <li>Positive routines</li>
+            </ul>
+        </div>
+
+        <div class="card module-card" data-aos="zoom-in" data-aos-delay="400">
+            <span>🤖</span>
+            <h3>Module 5: AI Integration</h3>
+            <ul>
+                <li>ChatGPT for productivity</li>
+                <li>Canva for awareness content</li>
+                <li>Notion organization</li>
+                <li>Responsible AI usage</li>
+                <li>Digital wellness & boundaries</li>
+            </ul>
+        </div>
+
+        <div class="card module-card" data-aos="zoom-in" data-aos-delay="500">
+            <span>🎯</span>
+            <h3>Final Capstone Project</h3>
+            <ul>
+                <li>Awareness campaign</li>
+                <li>Workshop design</li>
+                <li>Role-play presentation</li>
+                <li>AI-supported project</li>
+                <li>Real-world impact solution</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW WE TEACH -->
+<!-- <section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>How We Teach</h2>
+        <p>Practical. Interactive. Safe. Engaging.</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-aos="fade-right">
+            <h3>🎭 Activity-Based Learning</h3>
+            <p>
+                90% practical learning through activities, role-plays,
+                discussions, simulations and reflection exercises.
+            </p>
+        </div>
+
+        <div class="card" data-aos="fade-up">
+            <h3>🫶 Safe Environment</h3>
+            <p>
+                Students learn in a non-judgemental environment with
+                open conversations and emotional safety.
+            </p>
+        </div>
+
+        <div class="card" data-aos="fade-left">
+            <h3>📚 No Pressure Learning</h3>
+            <p>
+                No rote learning or heavy theory. Focus is on practical
+                understanding and real-life application.
+            </p>
+        </div>
+
+    </div>
+
+</section> -->
+
+<!-- WHO IS THIS FOR -->
+<section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Who Is This Course For?</h2>
+        <p>Students who want to grow personally and professionally</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-aos="flip-left">
+            <h3>🎓 Grade 11–12 Students</h3>
+            <p>Psychology in Real Life course designed for school & junior college students.</p>
+        </div>
+
+        <div class="card" data-aos="flip-left" data-aos-delay="100">
+            <h3>👩‍🎓 Students Aged 16–20</h3>
+            <p>Applied Psychology Lab for students exploring emotional intelligence and psychology.</p>
+        </div>
+
+        <div class="card" data-aos="flip-left" data-aos-delay="200">
+            <h3>🌟 Practical Skill Learners</h3>
+            <p>Perfect for students interested in communication, self-growth and real-life skills.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="section" style="text-align:center;">
+    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20psychology%20in%20IT%20in%20Course.%20Please%20share%20details."
+     class="btn">Enroll Now</a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20enroll%20in%20psychology%20in%20IT%20in%20Course.%20Please%20share%20details." class="whatsapp">💬</a>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 NovaNxt Lab | Learn. Build. Get Hired.
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+</body>
+</html>
+
