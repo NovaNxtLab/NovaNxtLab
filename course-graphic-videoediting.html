@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphic Designing & Video Editing | NovaNxt Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#F5F7FA;
+}
+
+/* WATERMARK */
+body::before{
+    content:"";
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:700px;
+    height:700px;
+    background:url('header.png') no-repeat center;
+    background-size:contain;
+    opacity:0.05;
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+
+    background:rgba(255,255,255,0.7); /* glass */
+    backdrop-filter:blur(10px); /* blur effect */
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:95px;
+}
+
+.logo span{
+    font-size:30px;
+    font-weight:600;
+    color:#0A1F44;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    position:relative;
+    text-decoration:none;
+    color:#0A1F44;
+    font-weight:600;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* underline animation */
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    bottom:-5px;
+    left:0;
+    background:#FF7A00;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#FF7A00;
+}
+
+nav button{
+    background:#FF7A00;
+    padding:10px 20px;
+    border:none;
+    color:white;
+    border-radius:8px;
+}
+.logo img{
+    height:95px;
+    transition:0.3s;
+}
+
+.logo img:hover{
+    transform:scale(1.05);
+}
+nav button{
+    background:#FF7A00;
+    border:none;
+    padding:10px 20px;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#e56b00;
+    transform:translateY(-2px);
+}
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+     background:linear-gradient(135deg,#0A1F44,#1DA1F2);
+    color:white;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* SECTION */
+.section{
+    padding:60px 50px;
+}
+
+.section h2{
+    color:#0A1F44;
+    margin-bottom:20px;
+}
+
+/* CARD */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#FF7A00;
+    color:white;
+    padding:12px 25px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0A1F44;
+    color:white;
+    margin-top:40px;
+}
+/* HAMBURGER */
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+        padding:20px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    nav{
+        flex-direction:row;
+    }
+}
+.logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+}
+
+.tagline{
+    font-size:12px;
+    color:#555;
+    font-weight:500;
+    letter-spacing:0.5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        <img src="logo.png">
+        <span>Nova<span style="color:#F59E0B;">Nxt</span> Lab</span>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#aboutus">About</a>
+        <a href="index.html#courses">Courses</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content" data-aos="fade-up">
+
+        <h1>AI Graphic Designing & Video Editing</h1>
+
+      
+
+      
+    </div>
+
+</section>
+
+<!-- OVERVIEW -->
+
+<section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Course Overview</h2>
+        <!-- <p>Become a professional creative designer & editor</p> -->
+    </div>
+
+    <div class="card" data-aos="zoom-in">
+
+        <p style="font-size:18px; line-height:2;">
+            This course is designed to transform beginners into professional
+            creative editors and designers using industry-standard software,
+            AI tools and modern content creation workflows.
+            <br><br>
+
+            Students will learn social media designing, cinematic editing,
+            motion graphics, branding, AI-generated creatives and portfolio building.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- TOOLS -->
+
+<section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Software & Tools Covered</h2>
+    <!--     <p>Industry-standard creative tools</p> -->
+    </div>
+
+    <div class="tool-box">
+
+        <div class="grid">
+
+            <div class="card" data-aos="fade-up">
+                <h3>🎨 Graphic Designing</h3>
+
+                <ul>
+                    <li>Canva</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Illustrator</li>
+                    <li>CorelDRAW</li>
+                    <li>Figma</li>
+                </ul>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>🎬 Video Editing</h3>
+
+                <ul>
+                    <li>CapCut</li>
+                    <li>VN Editor</li>
+                    <li>Adobe Premiere Pro</li>
+                    <li>Adobe After Effects</li>
+                </ul>
+            </div>
+
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>🤖 AI Tools</h3>
+
+                <ul>
+                    <li>ChatGPT</li>
+                    <li>Runway ML</li>
+                    <li>Kling AI</li>
+                    <li>Leonardo AI</li>
+                    <li>Midjourney</li>
+                    <li>ElevenLabs</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MODULES -->
+
+<section class="section" id="modules">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Course Modules</h2>
+     <!--    <p>Professional creative curriculum</p> -->
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-aos="zoom-in">
+            <h3>🎨 Design Fundamentals</h3>
+
+            <p>
+                Color theory, typography, layout design,
+                visual hierarchy, branding basics & creative thinking.
+            </p>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+            <h3>🖌 Canva Mastery</h3>
+
+            <p>
+                Social media posts, carousels, thumbnails,
+                presentations, Canva AI & animation features.
+            </p>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+            <h3>📸 Photoshop Mastery</h3>
+
+            <p>
+                Retouching, manipulation, cinematic grading,
+                AI editing, product ads & professional effects.
+            </p>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">
+            <h3>✏ Illustrator & CorelDRAW</h3>
+
+            <p>
+                Logo designing, vector graphics,
+                packaging design & complete branding.
+            </p>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="400">
+            <h3>🎥 Video Editing Basics</h3>
+
+            <p>
+                Timeline workflow, transitions,
+                sync editing, audio balancing & cinematic reels.
+            </p>
+        </div>
+
+        <div class="card" data-aos="zoom-in" data-aos-delay="500">
+            <h3>🤖 AI Content Creation</h3>
+
+            <p>
+                AI image generation, AI videos,
+                voiceovers, automation & AI reel creation.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<!-- <section class="section">
+
+    <div class="section-title" data-aos="fade-up">
+        <h2>Practice Projects</h2>
+        <p>Build a professional creative portfolio</p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card" data-aos="flip-left">
+            <h3>📱 Social Media Designs</h3>
+            <p>Instagram posts, stories, reels & carousels.</p>
+        </div>
+
+        <div class="card" data-aos="flip-left" data-aos-delay="100">
+            <h3>🎬 Cinematic Posters</h3>
+            <p>Create movie-style posters and product ads.</p>
+        </div>
+
+        <div class="card" data-aos="flip-left" data-aos-delay="200">
+            <h3>🏷 Brand Identity</h3>
+            <p>Logo, color palette, typography & branding kit.</p>
+        </div>
+
+        <div class="card" data-aos="flip-left" data-aos-delay="300">
+            <h3>🎥 Viral Reels</h3>
+            <p>Professional Instagram reels & YouTube shorts.</p>
+        </div>
+
+        <div class="card" data-aos="flip-left" data-aos-delay="400">
+            <h3>🤖 AI Campaign</h3>
+            <p>Create AI-powered social media brand campaigns.</p>
+        </div>
+
+    </div> -->
+
+</section>
+
+<!-- CTA -->
+
+<!-- CTA -->
+<section class="section" style="text-align:center;">
+    <a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20join%20Graphic%20and%20Video%20Editing%20course." class="btn">Enroll Now</a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917208237876?text=Hi%20NovaNxt%20Lab%2C%20I%20want%20to%20join%20Graphic%20and%20Video%20Editing%20course." class="whatsapp">💬</a>
+<!-- FOOTER -->
+
+<footer>
+   © 2026 NovaNxt Lab | Learn. Build. Get Hired.
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+    duration:1000,
+    once:true
+});
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
